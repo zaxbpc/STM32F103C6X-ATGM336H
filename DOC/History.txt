@@ -1,0 +1,35 @@
+================================================================================
+                              代码移植及完善说明
+================================================================================
+
+1，使用“startup_stm32f103x6.s”替换掉左侧“project”栏中的“startup_stm32f10x_md.s”。否则直接修改“Options for Target”下的“Device”下的“STM32F103C6”后编译会报错。
+说明：
+	startup_stm32f10x_ld.s 对应小容量型（Low Density，Flash容量不大于32Kb）F103产品的启动文件,
+	startup_stm32f10x_md.s 对应中容量型（Medium Density，Flash容量介于64Kb和128Kb）F103产品的启动文件，
+	startup_stm32f10x_hd.s 对应大容量型（High Density，Flash容量不小于256Kb）F103产品的启动文件。
+
+参考文档
+	1.1 stm32小容量、中容量和大容量产 在选择启动文件时该怎么选 （http://news.eeworld.com.cn/mcu/article_2016092529767.html）
+	1.2 STM32F103小容量、中容量和大容量单片机介绍_stm32f103单片机介绍 (https://blog.csdn.net/wsq_666/article/details/124135035)
+	
+	
+2，去掉了原代码（基于STM32F103C8T6）中的部分冗余及无用代码，并规范了代码风格，添加了详细的中文注释
+
+
+3，关于上次实验课温湿度传感器SHT30调试中出现的问题，可以按照以下进行尝试解决：
+	1）参照上面的“1”，并修改“Options for Target”下的“Preprocessor Symbols”下的“Define”为“STM32F10X”，见参考文档1.2中的“常见错误二”
+	2）统一程序中的SDA、SCL引脚和硬件电路的实际连接，使SHT30的控制引脚与MCU的功能引脚对应
+	3）求助
+	4）修改当前Project的路径为全英文
+	
+4，关于使用串口调试助手工具（如XCOM、UartAssist、sscom）过程中出现打印乱码的问题，可以按照以下进行尝试解决：
+	1）检查程序中的串口配置是否与助手工具的一致（波特率、校验位、数据位、停止位等），并及时统一
+	2）使用英文来表示需要打印的内容
+	
+5，关于编辑代码时，出现使用鼠标左键选择中文注释时出现乱码的问题，可以按照以下进行尝试解决：
+	1）修改菜单栏“Edit”下的“Configuration”下的“Editor”下的“Encoding”下的“Chinese GB2312（Simplified）”，然后点击“OK”保存配置
+	2）修改当前Project的路径为全英文
+	
+6，关于无法在线或者离线安装Pack的问题，，可以按照以下进行尝试解决：
+	1）在线安装，ARM服务器网速慢，可能需要加载很长时间，特别是国产单片机，可能没有向ARM公开其Pack而无法加载，故建议直接区官网下载Pack离线安装
+	2）离线安装，安装完成后突然弹框报错问题，尝试更改Keil uVision5 IDE软件安装目录下的“TOOLS.INI”文件下的第8行为“RTEPATH="C:\Keil_v5\Arm\Packs"”，关闭IDE软件keil然后再重新安装Pack
