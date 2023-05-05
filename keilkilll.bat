@@ -1,4 +1,4 @@
-::del *.bak /s ::ÓÃ»§±¸·İÀàÎÄ¼ş
+::del *.bak /s ::ç”¨æˆ·å¤‡ä»½ç±»æ–‡ä»¶
 del *.ddk /s
 del *.edk /s
 del *.lst /s
@@ -7,7 +7,7 @@ del *.mpf /s
 del *.mpj /s
 del *.obj /s
 del *.omf /s
-::del *.opt /s  ::JLINKµÄÉèÖÃ
+::del *.opt /s  ::JLINKçš„è®¾ç½®
 del *.plg /s
 del *.rpt /s
 del *.tmp /s
@@ -17,9 +17,9 @@ del *.o /s
 del *.d /s
 del *.axf /s
 del *.tra /s
-::del *.dep /s	::Õû¸ö¹¤³ÌµÄÒÀÀµÎÄ¼ş
+::del *.dep /s	::æ•´ä¸ªå·¥ç¨‹çš„ä¾èµ–æ–‡ä»¶
 del JLinkLog.txt /s
-del *.uvguix.* /s	::´°¿Ú²¼¾ÖÎÄ¼ş£¬PC¶ËµÄÓÃ»§Ãû²»Í¬£¬»á´´½¨²»Í¬ºó×ºÃûÎÄ¼ş
+del *.uvguix.* /s  ::çª—å£å¸ƒå±€æ–‡ä»¶ï¼Œæ ¹æ®PCæœºç”¨æˆ·ååˆ›å»ºä¸ä¹‹åŒåçš„æ–‡ä»¶
 del *.iex /s
 del *.htm /s
 del *.sct /s
